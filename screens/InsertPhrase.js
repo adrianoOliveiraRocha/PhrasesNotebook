@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Button, TextInput } from 'react-native';
 import styles from './styles/main';
+import Phrase from './../models/Phrase';
 
 function InsertPhrase({ navigation }) {
   const [phrase, setPhrase] = React.useState('');
@@ -10,7 +11,7 @@ function InsertPhrase({ navigation }) {
   }
 
   function savePhrase() {
-    alert(phrase);
+    Phrase(phrase);
   }
 
   return (
