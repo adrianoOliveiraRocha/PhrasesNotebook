@@ -1,23 +1,27 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#03cafc'
   },
+
   formContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#03cafc'
   },
+
   subContainer: {
     margin: 10,
     backgroundColor: '#ddd',
     alignItems: 'center'
   },
+
   text: {
     fontSize: 15,
     color: 'black',
@@ -46,8 +50,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     textAlign: 'center',
     fontSize: 20,
-
   }
+
 });
 
 export default styles;

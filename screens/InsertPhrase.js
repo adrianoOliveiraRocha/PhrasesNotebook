@@ -11,7 +11,14 @@ function InsertPhrase({ navigation }) {
   }
 
   function savePhrase() {
-    Phrase(phrase);
+    Phrase.insert(phrase)
+      .then(result => {
+        if(result) alert('Sua frase foi inserida com sucesso!');
+      })
+      .catch(error => {
+        console.error(error);
+        alert(error)
+      });
   }
 
   return (

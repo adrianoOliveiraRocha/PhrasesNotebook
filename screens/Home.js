@@ -1,8 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import styles from './styles/main';
+import Phrase from './../models/Phrase';
 
 function Home({ navigation }) {
+
+  function clear() {
+    Phrase.clear();
+  }
   return (
     <View style={styles.container}>
 
@@ -21,7 +26,12 @@ function Home({ navigation }) {
       <Button
         title="Vêr Todas"
         color='#089757'
-        onPress={() => navigation.navigate("Contact")}
+        onPress={() => navigation.navigate("Todas")}
+      />
+      <Button
+        title="Limpar"
+        color='#089757'
+        onPress={clear}
       />
 
     </View>

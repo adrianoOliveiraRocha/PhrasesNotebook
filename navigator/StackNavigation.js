@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './../screens/Home';
 import InsertPhrase from './../screens/InsertPhrase';
-import About from './../screens/About';
+import GetPhrases from './../screens/GetPhrases';
 
 const forFad = ({ current, next }) => {
   const opacity = Animated(
@@ -44,9 +44,12 @@ function MyStack() {
       />
 
       <Stack.Screen
-        name="About"
-        component={About}
-        options={{ headerStyleInterpolator: forFad }}
+        name="Todas"
+        component={GetPhrases}
+        options={{
+          headerTintColor: "black",
+          headerStyle: {backgroundColor: '#fff'}
+        }}
       />
 
     </Stack.Navigator>
