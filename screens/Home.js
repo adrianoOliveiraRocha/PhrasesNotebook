@@ -18,7 +18,7 @@ function Home({ navigation }) {
   function init() {
     Phrase.init()
       .then(() => {
-        alert('Reinicializado com sucesso');
+        alert('Reiniciado com sucesso');
       })
       .catch(e => {
         alert(e);

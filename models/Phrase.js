@@ -12,34 +12,13 @@ const Phrase = {
     }
   },
 
-  getPhrase: async function() {
+  getPhrase: async function() { // get just one not used phrase
     try {
-      var result = await this.getPhrases();
-      var data = [];
-      if(result) { // it is not null
-        result.forEach((item, i) => {
-          let temp = { id: item.id, text: item.text, used: item.used };
-          data.push(item);
-        });
-        var choosed = null;
-        for (var p of data) {
-          if(!p.used) {
-            choosed = p;
-            p.used = true;
-            break;
-          }
-        }
-        var stringData = JSON.stringify(data);
-        await AsyncStorage.setItem('phrases', stringData);
-
-        return choosed;
-      } else {
-        return false;
-      }
+      var phrases = await this.getPhrases();
+      return phrases;
     } catch (e) {
       return e;
     }
-
   },
 
   insert: async function(phrase) {
@@ -76,6 +55,7 @@ const Phrase = {
   },
 
   init: async function() {
+    /* Make all phrases unused */
     try {
       var result = await AsyncStorage.getItem('phrases');
       var JSONData = JSON.parse(result);
@@ -84,12 +64,22 @@ const Phrase = {
         let temp = { id: phrase.id, text: phrase.text, used: false };
         data.push(temp);
       }
+      console.log(data);
       var stringData = JSON.stringify(JSONData);
+      // await AsyncStorage.removeItem('phrases');
       await AsyncStorage.setItem('phrases', stringData);
       return;
     } catch(e) {
       return e;
     }
+  },
+
+  makeAsUsed: async function(id) {
+    var phrases = await AsyncStorage.getItem('phrases');
+    forEach((p) => {
+      console.log(p);
+    });
+
   }
 
 }
