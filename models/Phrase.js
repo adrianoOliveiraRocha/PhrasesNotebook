@@ -55,18 +55,16 @@ const Phrase = {
   },
 
   init: async function() {
-    /* Make all phrases unused */
+    /* Make all phrases not used */
     try {
-      var result = await AsyncStorage.getItem('phrases');
-      var JSONData = JSON.parse(result);
+      var result = await this.getPhrases();
       var data = [];
-      for (let phrase of JSONData) {
+      for (let phrase of result) {
         let temp = { id: phrase.id, text: phrase.text, used: false };
         data.push(temp);
       }
       console.log(data);
-      var stringData = JSON.stringify(JSONData);
-      // await AsyncStorage.removeItem('phrases');
+      var stringData = JSON.stringify(data);
       await AsyncStorage.setItem('phrases', stringData);
       return;
     } catch(e) {
@@ -75,11 +73,17 @@ const Phrase = {
   },
 
   makeAsUsed: async function(id) {
-    var phrases = await AsyncStorage.getItem('phrases');
-    forEach((p) => {
-      console.log(p);
-    });
-
+    console.log(id);
+    var phrases = JSON.parse(await AsyncStorage.getItem('phrases'));
+    for (var i in phrases) {
+      if(phrases[i].id == id) {
+        phrases[i].used = true;
+      }
+    }
+    console.log(phrases);
+    var stringData = JSON.stringify(phrases);
+    await AsyncStorage.setItem('phrases', stringData);
+    return true;
   }
 
 }

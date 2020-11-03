@@ -16,12 +16,19 @@ function GetPhrase({ navigation }) {
         break;
       }
     }
-    setPhrase(choosedPhrase);
+    if(choosedPhrase) setPhrase(choosedPhrase);
+    else setPhrase("Você já usou todas");
     makeAsUsed();
   }
 
   function makeAsUsed() {
-    alert(id);
+    Phrase.makeAsUsed(id)
+      .then(result => {
+        console.log(result);
+      })
+      .catch(e => {
+        alert(e);
+      });
   }
 
   (function() {
