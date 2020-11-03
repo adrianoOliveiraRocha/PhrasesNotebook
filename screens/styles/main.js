@@ -1,12 +1,19 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  
+
   container: {
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#03cafc'
+  },
+
+  buttonsContainer: {
+    flexDirection: 'column',
+    width: 200, height: 300, alignItems: 'stretch',
+    justifyContent: 'space-around',
+    // backgroundColor: 'red'
   },
 
   formContainer: {
