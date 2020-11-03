@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text} from 'react-native';
+import { View, Text, Button } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 
@@ -31,6 +31,10 @@ function GetPhrase({ navigation }) {
       });
   }
 
+  function deletePhrase() {
+    alert(id);
+  }
+
   (function() {
     Phrase.getPhrase()
       .then(phrases => {
@@ -41,13 +45,37 @@ function GetPhrase({ navigation }) {
       })
   })();
 
-  return (
-    <View style={styles.formContainer}>
-      <View style={styles.formField}>
-        <Text style={styles.formLabel}>{phrase}</Text>
+  if(id) {
+    return (
+      <View style={styles.formContainer}>
+        <View style={styles.formField}>
+          <Text style={styles.formLabel}>{phrase}</Text>
+        </View>
+
+        <View style={[styles.buttonsContainer, {height: 100}]}>
+          <Button
+            title="Deletar"
+            color='#aa3344'
+            onPress={deletePhrase}
+          />
+          <Button
+            title="Ouvir"
+            color='#089757'
+            // onPress={}
+          />
+        </View>
+
       </View>
-    </View>
-  );
+    );
+  } else {
+    return (
+      <View style={styles.formContainer}>
+        <View style={styles.formField}>
+          <Text style={styles.formLabel}>{phrase}</Text>
+        </View>
+      </View>
+    );
+  }
 
 }
 

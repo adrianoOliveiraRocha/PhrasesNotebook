@@ -63,7 +63,6 @@ const Phrase = {
         let temp = { id: phrase.id, text: phrase.text, used: false };
         data.push(temp);
       }
-      console.log(data);
       var stringData = JSON.stringify(data);
       await AsyncStorage.setItem('phrases', stringData);
       return;
