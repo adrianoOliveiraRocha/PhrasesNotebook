@@ -7,7 +7,6 @@ const Phrase = {
       let phrases = await AsyncStorage.getItem('phrases');
       return JSON.parse(phrases);
     } catch (error) {
-      console.log(error);
       return error;
     }
   },
@@ -72,7 +71,6 @@ const Phrase = {
   },
 
   makeAsUsed: async function(id) {
-    console.log(id);
     var phrases = JSON.parse(await AsyncStorage.getItem('phrases'));
     for (var i in phrases) {
       if(phrases[i].id == id) {
@@ -83,6 +81,20 @@ const Phrase = {
     var stringData = JSON.stringify(phrases);
     await AsyncStorage.setItem('phrases', stringData);
     return true;
+  },
+
+  delete: async function(id) {
+    console.log(id);
+    try {
+      const phrases = await this.getPhrases();
+      var filteredPhrases = phrases.filter((phrase) => {
+        return phrase.id !== id;
+      })
+      return filteredPhrases;
+    } catch (e) {
+      return e;
+    }
+
   }
 
 }

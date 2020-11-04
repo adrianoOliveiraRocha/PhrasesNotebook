@@ -31,8 +31,18 @@ function GetPhrase({ navigation }) {
       });
   }
 
-  function deletePhrase() {
-    alert(id);
+  async function deletePhrase() {
+    Phrase.getPhrases()
+      .then(phrases => {
+        var filteredPhrases = phrases.filter((item) => {
+          // console.log(item.id != id);
+          return item.id != id;
+        });
+        console.log(filteredPhrases);
+      })
+      .catch(e => {
+        alert(e);
+      });
   }
 
   (function() {
