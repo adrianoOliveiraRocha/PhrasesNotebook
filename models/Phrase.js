@@ -84,17 +84,14 @@ const Phrase = {
   },
 
   delete: async function(id) {
-    console.log(id);
-    try {
-      const phrases = await this.getPhrases();
-      var filteredPhrases = phrases.filter((phrase) => {
-        return phrase.id !== id;
-      })
-      return filteredPhrases;
-    } catch (e) {
-      return e;
-    }
-
+    var phrases = await this.getPhrases();
+    var filtPhrases = phrases.filter(function(item) {
+      return item.id != id;
+    });
+    var newPhrases = JSON.stringify(filtPhrases);
+    await AsyncStorage.removeItem('phrases');
+    await AsyncStorage.setItem('phrases', newPhrases);
+    return true;
   }
 
 }

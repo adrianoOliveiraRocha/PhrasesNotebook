@@ -32,13 +32,12 @@ function GetPhrase({ navigation }) {
   }
 
   async function deletePhrase() {
-    Phrase.getPhrases()
-      .then(phrases => {
-        var filteredPhrases = phrases.filter((item) => {
-          // console.log(item.id != id);
-          return item.id != id;
-        });
-        console.log(filteredPhrases);
+    Phrase.delete(id)
+      .then(result => {
+        if(result) {
+          setPhrase('');
+          alert("Frases deletada com sucesso!");
+        }
       })
       .catch(e => {
         alert(e);
