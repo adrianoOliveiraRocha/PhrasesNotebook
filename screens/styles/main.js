@@ -57,7 +57,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     textAlign: 'center',
     fontSize: 20,
-  }
+  },
+
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+    color: '#fff',
+    textAlign: 'left'
+  },
 
 });
 

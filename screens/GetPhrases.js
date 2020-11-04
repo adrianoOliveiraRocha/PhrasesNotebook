@@ -1,22 +1,32 @@
 import React from 'react';
-import { View, Text} from 'react-native';
+import { View, Text, FlatList} from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 
 function GetPhrases({ navigation }) {
-  (function() {
-    Phrase.getPhrases()
-      .then(result => {
-        console.log(result);
-      })
-      .catch(error => {
-        console.error(error);
-      })
-  })();
+  const [data, setData] = React.useState([]);
+
+  Phrase.getPhrases()
+    .then(result => {
+      var arrayTemp=[];
+      result.forEach((item) => {
+        arrayTemp.push({key: item.text});
+      });
+      setData(arrayTemp);
+    })
+    .catch(e => {
+      alert(e);
+    });
+
   return (
     <View style={styles.formContainer}>
-      <View style={styles.formField}>
-        <Text style={styles.formLabel}>Todas</Text>
+      <View style={[styles.formField, {marginBottom: 10}]}>
+
+        <FlatList
+          data={data}
+          renderItem={({item}) => <Text style={[styles.item]}>{item.key}</Text>}
+        />
+
       </View>
     </View>
   );
