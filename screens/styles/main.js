@@ -6,32 +6,44 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#03cafc'
+    // backgroundColor: '#03cafc'
+    backgroundColor: '#124578'
   },
 
   buttonsContainer: {
     flexDirection: 'column',
     width: 200, height: 300, alignItems: 'stretch',
     justifyContent: 'space-around',
-    // backgroundColor: 'red'
+  },
+
+  button: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderWidth: 2, borderColor: 'white',
+    padding: 5, backgroundColor: '#089757'
+  },
+
+  textButton: {
+    color: '#fff',
+    fontSize: 16
   },
 
   formContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#03cafc'
+    backgroundColor: '#124578'
   },
 
   subContainer: {
     margin: 10,
-    backgroundColor: '#ddd',
+    backgroundColor: '#222',
     alignItems: 'center'
   },
 
   text: {
     fontSize: 15,
-    color: 'black',
+    color: 'white',
     fontWeight: '800',
     margin: 10,
     justifyContent: 'center'

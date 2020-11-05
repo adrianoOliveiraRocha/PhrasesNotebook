@@ -1,14 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, ToastAndroid } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
+import { AntDesign } from '@expo/vector-icons';
 
 function Home({ navigation }) {
 
   function clear() {
     Phrase.clear()
       .then(result => {
-        if(result) alert('Todas as suas frases foram deletadas');
+        if(result) ToastAndroid.show('Todas as suas frases foram deletadas :(', ToastAndroid.SHORT);
       })
       .catch(e => {
         alert(e);
@@ -18,7 +19,7 @@ function Home({ navigation }) {
   function init() {
     Phrase.init()
       .then(() => {
-        alert('Reiniciado com sucesso');
+        ToastAndroid.show('Reiniciado com sucesso', ToastAndroid.SHORT);
       })
       .catch(e => {
         alert(e);
@@ -56,10 +57,25 @@ function Home({ navigation }) {
           onPress={init}
         />
         <Button
-          title="Limpar"
-          color='#089757'
+          title="Deletar Todas"
+          color='#aa3344'
           onPress={clear}
         />
+        <Button
+          title="Sobre"
+          color='#089757'
+        />
+
+        <View
+        style={styles.button}>
+          <Text onPress={() => navigation.navigate("Dê-me uma Frase")}
+            style={styles.textButton}>
+           Dê-me uma frase
+          </Text>
+          <AntDesign name="rightcircleo" size={24} color="white"
+            onPress={() => navigation.navigate("Dê-me uma Frase")}/>
+        </View>
+
       </View>
 
     </View>

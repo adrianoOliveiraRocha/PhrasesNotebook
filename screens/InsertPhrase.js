@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
+import { View, Text, Button, TextInput, ToastAndroid } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 
@@ -13,7 +13,10 @@ function InsertPhrase({ navigation }) {
   function savePhrase() {
     Phrase.insert(phrase)
       .then(result => {
-        if(result) alert('Sua frase foi inserida com sucesso!');
+        if(result) {
+          ToastAndroid.show('Sua frase foi inserida com sucesso!', ToastAndroid.SHORT);
+          setPhrase('');
+        }
       })
       .catch(error => {
         console.error(error);
@@ -31,10 +34,17 @@ function InsertPhrase({ navigation }) {
           value={phrase}
           onChangeText={change}/>
       </View>
-      <Button title='Salvar Frase'
-        color='#089757'
-        onPress={savePhrase}
-      />
+      <View style={[styles.buttonsContainer, {height: 100}]}>
+        <Button title='Salvar Frase'
+          color='#089757'
+          onPress={savePhrase}
+        />
+        <Button
+          title="Home"
+          color='#089757'
+          onPress={() => navigation.navigate("Home")}
+        />
+      </View>
     </View>
   );
 }

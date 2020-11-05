@@ -16,7 +16,7 @@ function GetPhrase({ navigation }) {
     }
 
     var options = {
-      language: 'en-AU',
+      language: 'en-US',
       pitch: 1.0,
       rate: 1.0,
       onStart: start,
@@ -103,16 +103,16 @@ function GetPhrase({ navigation }) {
           <Text style={styles.formLabel}>{phrase}</Text>
         </View>
 
-        <View style={[styles.buttonsContainer, {height: 100}]}>
-          <Button
-            title="Próxima"
-            color='#089757'
-            onPress={nextOne}
-          />
+        <View style={[styles.buttonsContainer, {height: 180}]}>
           <Button
             title="Ouvir"
             color='#089757'
             onPress={speak}
+          />
+          <Button
+            title="Próxima"
+            color='#089757'
+            onPress={nextOne}
           />
           <Button
             title="Deletar"
