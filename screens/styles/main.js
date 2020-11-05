@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     color: 'white',
     marginHorizontal: 5,
     fontSize: 20,
+    textAlign: 'center'
   },
 
   formItemInput: {
