@@ -2,10 +2,15 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
+import * as Speech from 'expo-speech';
 
 function GetPhrase({ navigation }) {
   const [phrase, setPhrase] = React.useState(null);
   const [id, setId] = React.useState(null);
+
+  function speak() {
+    Speech.speak(phrase);
+  }
 
   function choosePhrase(phrases) {
     var choosedPhrase = null;
@@ -70,7 +75,7 @@ function GetPhrase({ navigation }) {
           <Button
             title="Ouvir"
             color='#089757'
-            // onPress={}
+            onPress={speak}
           />
         </View>
 

@@ -5,11 +5,11 @@ import Phrase from './../models/Phrase';
 
 function GetPhrases({ navigation }) {
   const [data, setData] = React.useState([]);
-
+  // use async operation with automatic abortion on unmount
   (function useAsync(asyncFn, onSuccess) {
-    React.useEffect(() => {
-      let isMounted=true;
-      Phrase.getPhrases()
+    React.useEffect(() => { //useEffects means: We need to do something after render
+      let isMounted = true;
+      Phrase.getPhrases() // my effect
         .then(result => {
           if(isMounted) {
             var arrayTemp=[];
