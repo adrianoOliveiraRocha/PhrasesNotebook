@@ -6,17 +6,24 @@ import Phrase from './../models/Phrase';
 function GetPhrases({ navigation }) {
   const [data, setData] = React.useState([]);
 
-  Phrase.getPhrases()
-    .then(result => {
-      var arrayTemp=[];
-      result.forEach((item) => {
-        arrayTemp.push({key: item.text});
-      });
-      setData(arrayTemp);
-    })
-    .catch(e => {
-      alert(e);
-    });
+  (function useAsync(asyncFn, onSuccess) {
+    React.useEffect(() => {
+      let isMounted=true;
+      Phrase.getPhrases()
+        .then(result => {
+          if(isMounted) {
+            var arrayTemp=[];
+            result.forEach((item) => {
+              arrayTemp.push({key: item.text});
+            });
+            setData(arrayTemp);
+          }
+        })
+        .catch(e => {
+          alert(e);
+        });
+    }, [asyncFn, onSuccess]);
+  })();
 
   return (
     <View style={styles.formContainer}>
