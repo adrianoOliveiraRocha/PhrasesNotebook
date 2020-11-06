@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text, FlatList, SafeAreaView} from 'react-native';
+import { View, Text, FlatList, SafeAreaView } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 
-function Item({ title }) {
+function Item({ item }) {
+  console.log(item);
   return (
     <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title} onPress={() => alert(item.key)}>{item.title}</Text>
     </View>
   );
 }
@@ -14,8 +15,9 @@ function Item({ title }) {
 function GetPhrases({ navigation }) {
 
   function renderItem({ item }) {
+    console.log(item);
     return (
-      <Item title={item.title} />
+      <Item item={item} />
     );
   }
 
@@ -42,11 +44,11 @@ function GetPhrases({ navigation }) {
 
   return (
     <SafeAreaView style={styles.formContainer}>
-    <FlatList
-      data={data}
-      renderItem={renderItem}
-      keyExtractor={item => item.id}
-    />
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={item => item.key}
+      />
     </SafeAreaView>
   );
 }
