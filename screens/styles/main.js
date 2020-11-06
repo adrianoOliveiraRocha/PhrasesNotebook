@@ -11,13 +11,13 @@ const styles = StyleSheet.create({
 
   buttonsContainer: {
     flexDirection: 'column',
-    width: 200, height: 300, alignItems: 'stretch',
+    width: 185, height: 300, alignItems: 'stretch',
     justifyContent: 'space-around',
   },
 
   button: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     borderWidth: 2, borderColor: 'white',
     padding: 5, backgroundColor: '#089757'
   },
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 20
+    fontSize: 18
   }
 
 });

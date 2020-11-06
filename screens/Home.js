@@ -36,38 +36,8 @@ function Home({ navigation }) {
       </View>
 
       <View style={styles.buttonsContainer}>
-        <Button
-          title="Dê-me uma Frase"
-          color='#089757'
-          onPress={() => navigation.navigate("Dê-me uma Frase")}
-        />
-        <Button
-          title="Inserir Frase"
-          color='#089757'
-          onPress={() => navigation.navigate("Inserir Frase")}
-        />
-        <Button
-          title="Vêr Todas"
-          color='#089757'
-          onPress={() => navigation.navigate("Todas")}
-        />
-        <Button
-          title="Reiniciar"
-          color='#089757'
-          onPress={init}
-        />
-        <Button
-          title="Deletar Todas"
-          color='#aa3344'
-          onPress={clear}
-        />
-        <Button
-          title="Sobre"
-          color='#089757'
-        />
 
-        <View
-        style={styles.button}>
+        <View style={styles.button}>
           <Text onPress={() => navigation.navigate("Dê-me uma Frase")}
             style={styles.textButton}>
            Dê-me uma frase
@@ -75,6 +45,55 @@ function Home({ navigation }) {
           <AntDesign name="rightcircleo" size={24} color="white"
             onPress={() => navigation.navigate("Dê-me uma Frase")}/>
         </View>
+
+        <View style={styles.button}>
+          <Text onPress={() => navigation.navigate("Inserir Frase")}
+            style={styles.textButton}>
+           Inserir Frase
+          </Text>
+          <AntDesign name="rightcircleo" size={24} color="white"
+            onPress={() => navigation.navigate("Inserir Frase")}/>
+        </View>
+
+        <View style={styles.button}>
+          <Text onPress={() => navigation.navigate("Todas")}
+            style={styles.textButton}>
+           Vêr Todas
+          </Text>
+          <AntDesign name="rightcircleo" size={24} color="white"
+            onPress={() => navigation.navigate("Todas")}/>
+        </View>
+
+        <View
+          style={styles.button}>
+          <Text onPress={init}
+            style={styles.textButton}>
+           Reiniciar
+          </Text>
+          <AntDesign name="rightcircleo" size={24} color="white"
+            onPress={init}/>
+        </View>
+        {/*
+        <View
+          style={[styles.button, {backgroundColor: '#aa3344'}]}>
+          <Text onPress={clear}
+            style={styles.textButton}>
+           Deletar Todas
+          </Text>
+          <AntDesign name="rightcircleo" size={24} color="white"
+            onPress={clear}/>
+        </View>
+        */}
+        <View
+          style={[styles.button]}>
+          <Text onPress={clear}
+            style={styles.textButton}>
+           Sobre
+          </Text>
+          <AntDesign name="rightcircleo" size={24} color="white"/>
+        </View>
+
+
 
       </View>
 

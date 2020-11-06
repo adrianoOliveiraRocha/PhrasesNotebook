@@ -4,18 +4,22 @@ import styles from './styles/main';
 import Phrase from './../models/Phrase';
 
 function Item({ item }) {
-  console.log(item);
+
+  function itemHandler() {
+    alert(item.key)
+  }
+
   return (
     <View style={styles.item}>
-      <Text style={styles.title} onPress={() => alert(item.key)}>{item.title}</Text>
+      <Text style={styles.title} onPress={itemHandler}>{item.title}</Text>
     </View>
   );
+
 }
 
 function GetPhrases({ navigation }) {
 
   function renderItem({ item }) {
-    console.log(item);
     return (
       <Item item={item} />
     );
@@ -37,7 +41,7 @@ function GetPhrases({ navigation }) {
           }
         })
         .catch(e => {
-          alert(e);
+          alert("Você não tem nenhuma frase cadastrada");
         });
     }, [asyncFn, onSuccess]);
   })();
