@@ -1,9 +1,24 @@
 import React from 'react';
-import { View, Text, FlatList} from 'react-native';
+import { View, Text, FlatList, SafeAreaView} from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 
+function Item({ title }) {
+  return (
+    <View style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+}
+
 function GetPhrases({ navigation }) {
+
+  function renderItem({ item }) {
+    return (
+      <Item title={item.title} />
+    );
+  }
+
   const [data, setData] = React.useState([]);
   // use async operation with automatic abortion on unmount
   (function useAsync(asyncFn, onSuccess) {
@@ -14,7 +29,7 @@ function GetPhrases({ navigation }) {
           if(isMounted) {
             var arrayTemp=[];
             result.forEach((item) => {
-              arrayTemp.push({key: item.text});
+              arrayTemp.push({key: `${item.id}`, title: item.text});
             });
             setData(arrayTemp);
           }
@@ -26,16 +41,13 @@ function GetPhrases({ navigation }) {
   })();
 
   return (
-    <View style={styles.formContainer}>
-      <View style={[styles.formField, {marginBottom: 10}]}>
-
-        <FlatList
-          data={data}
-          renderItem={({item}) => <Text style={[styles.item]}>{item.key}</Text>}
-        />
-
-      </View>
-    </View>
+    <SafeAreaView style={styles.formContainer}>
+    <FlatList
+      data={data}
+      renderItem={renderItem}
+      keyExtractor={item => item.id}
+    />
+    </SafeAreaView>
   );
 }
 

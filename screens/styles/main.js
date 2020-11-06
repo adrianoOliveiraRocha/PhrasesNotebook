@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    // backgroundColor: '#03cafc'
     backgroundColor: '#124578'
   },
 
@@ -73,12 +72,15 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-    color: '#fff',
-    textAlign: 'left'
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 10,
   },
+
+  title: {
+    fontSize: 32
+  }
 
 });
 
