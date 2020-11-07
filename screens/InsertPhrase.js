@@ -28,9 +28,9 @@ function InsertPhrase({ navigation }) {
   return (
     <View style={styles.formContainer}>
       <View style={styles.formField}>
-        <Text style={styles.formLabel}>Frase</Text>
+        <Text style={styles.formLabel}>Inserir Frase</Text>
         <TextInput
-          placeholder='sua frase aqui...'
+          placeholder='Digite sua frase aqui...'
           style={styles.formItemInput}
           value={phrase}
           onChangeText={change}/>
@@ -54,7 +54,7 @@ function InsertPhrase({ navigation }) {
           <AntDesign name="home" size={24} color="white"
             onPress={() => navigation.navigate("Home")}/>
         </View>
-        
+
       </View>
     </View>
   );

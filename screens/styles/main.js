@@ -49,21 +49,22 @@ const styles = StyleSheet.create({
   },
 
   formField: {
-    alignItems: 'flex-start',
+    alignItems: 'center',
     padding: 10,
-    flexDirection: 'row',
+    flexDirection: 'column',
     marginVertical: 20
   },
 
   formLabel: {
     color: 'white',
-    marginHorizontal: 5,
+    margin: 25,
     fontSize: 20,
     textAlign: 'center'
   },
 
   formItemInput: {
-    width: 250,
+    width: 300,
+    height: 50,
     marginHorizontal: 5,
     borderWidth: 2,
     backgroundColor: '#fff',
