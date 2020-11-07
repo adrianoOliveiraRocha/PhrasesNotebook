@@ -6,12 +6,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#124578'
+    backgroundColor: '#669'
   },
 
   buttonsContainer: {
     flexDirection: 'column',
-    width: 185, height: 300, alignItems: 'stretch',
+    width: 185, height: 250, alignItems: 'stretch',
     justifyContent: 'space-around',
   },
 
@@ -19,11 +19,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderWidth: 2, borderColor: 'white',
-    padding: 5, backgroundColor: '#089757'
+    padding: 5, backgroundColor: '#16a085'
   },
 
   textButton: {
-    color: '#fff',
+    color: 'white',
     fontSize: 16
   },
 
@@ -31,12 +31,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#124578'
+    backgroundColor: '#669'
   },
 
   subContainer: {
     margin: 10,
-    backgroundColor: '#222',
+    // backgroundColor: '#222',
     alignItems: 'center'
   },
 
@@ -72,14 +72,16 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: '#1abc9c',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 10,
+    alignItems: 'center'
   },
 
   title: {
-    fontSize: 18
+    fontSize: 18, color: 'white',
+    padding: 10
   }
 
 });

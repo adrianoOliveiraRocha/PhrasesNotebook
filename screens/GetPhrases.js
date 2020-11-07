@@ -1,17 +1,23 @@
 import React from 'react';
-import { View, Text, FlatList, SafeAreaView } from 'react-native';
+import { View, Text, FlatList, SafeAreaView, ToastAndroid } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
+import { AntDesign } from '@expo/vector-icons';
 
 function Item({ item }) {
+  function initializing() {
+    ToastAndroid.show('iniciando...', ToastAndroid.SHORT);
+    speak();
+  }
 
-  function itemHandler() {
-    alert(item.key)
+  function speak() {
+    Phrase.speak(item.title);
   }
 
   return (
     <View style={styles.item}>
-      <Text style={styles.title} onPress={itemHandler}>{item.title}</Text>
+      <Text style={styles.title} onPress={initializing}>{item.title}</Text>
+      <AntDesign name="play" size={24} color="white" onPress={initializing} />
     </View>
   );
 

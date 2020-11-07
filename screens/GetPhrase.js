@@ -2,32 +2,21 @@ import React from 'react';
 import { View, Text, Button, ToastAndroid } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
-import * as Speech from 'expo-speech';
+import { AntDesign, Entypo } from '@expo/vector-icons';
+
 
 function GetPhrase({ navigation }) {
   const [phrase, setPhrase] = React.useState(null);
   const [id, setId] = React.useState(null);
   const [phraseExists, setPhraseExists] = React.useState(true);
 
+  function initializing() {
+    ToastAndroid.show('iniciando...', ToastAndroid.SHORT);
+    speak();
+  }
+
   function speak() {
-
-    const start = () => {
-      ToastAndroid.show('Falando...', ToastAndroid.SHORT);
-    }
-
-    var options = {
-      language: 'en-US',
-      pitch: 1.0,
-      rate: 1.0,
-      onStart: start,
-      onError: (error) => alert('Oops! Tivemos um erro: ' + error),
-    };
-
-    Speech.speak(
-      phrase,
-      options,
-    );
-
+    Phrase.speak(phrase);
   }
 
   function choosePhrase(phrases) {
@@ -48,8 +37,6 @@ function GetPhrase({ navigation }) {
       setPhraseExists(false);
     }
     makeAsUsed();
-
-
 
   }
 
@@ -99,26 +86,41 @@ function GetPhrase({ navigation }) {
   if(id && phraseExists) {
     return (
       <View style={styles.formContainer}>
-        <View style={styles.formField}>
-          <Text style={styles.formLabel}>{phrase}</Text>
+        <View style={styles.item}>
+          <Text style={styles.title}>{phrase}</Text>
+          <AntDesign name="play" size={24} color="white" onPress={initializing} />
         </View>
 
         <View style={[styles.buttonsContainer, {height: 180}]}>
-          <Button
-            title="Ouvir"
-            color='#089757'
-            onPress={speak}
-          />
-          <Button
-            title="Próxima"
-            color='#089757'
-            onPress={nextOne}
-          />
-          <Button
-            title="Deletar"
-            color='#aa3344'
-            onPress={deletePhrase}
-          />
+
+          <View style={styles.button}>
+            <Text onPress={nextOne}
+              style={styles.textButton}>
+             Próxima
+            </Text>
+            <Entypo name="arrow-bold-right" size={24} color="white"
+            onPress={nextOne}/>
+          </View>
+
+          <View style={styles.button}>
+            <Text onPress={() => navigation.navigate("Home")}
+              style={styles.textButton}>
+             Home
+            </Text>
+            <AntDesign name="home" size={24} color="white"
+              onPress={() => navigation.navigate("Home")}/>
+          </View>
+
+          <View
+            style={[styles.button, {backgroundColor: '#aa3344'}]}>
+            <Text onPress={deletePhrase}
+              style={styles.textButton}>
+             Deletar Frase
+            </Text>
+            <AntDesign name="delete" size={24} color="white"
+              onPress={deletePhrase}/>
+          </View>
+
         </View>
 
       </View>
@@ -130,12 +132,14 @@ function GetPhrase({ navigation }) {
           <Text style={[styles.formLabel]}>{phrase}</Text>
         </View>
         <View style={[styles.buttonsContainer, {height: 100}]}>
-          <Button
-            title="Home"
-            color='#089757'
-            onPress={() => navigation.navigate("Home")}
-          />
-
+          <View style={styles.button}>
+            <Text onPress={() => navigation.navigate("Home")}
+              style={styles.textButton}>
+             Home
+            </Text>
+            <AntDesign name="home" size={24} color="white"
+              onPress={() => navigation.navigate("Home")}/>
+          </View>
         </View>
       </View>
     );

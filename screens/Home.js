@@ -1,20 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, ToastAndroid } from 'react-native';
+import { View, Text, StyleSheet, Button, ToastAndroid, Image } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 
 function Home({ navigation }) {
-
-  function clear() {
-    Phrase.clear()
-      .then(result => {
-        if(result) ToastAndroid.show('Todas as suas frases foram deletadas :(', ToastAndroid.SHORT);
-      })
-      .catch(e => {
-        alert(e);
-      })
-  }
 
   function init() {
     Phrase.init()
@@ -30,9 +20,15 @@ function Home({ navigation }) {
     <View style={styles.container}>
 
       <View style={styles.subContainer}>
-        <Text style={styles.text}>
-          In this App you can insert phrases and then get phrases aleatories.
-        </Text>
+        <Image
+          style={{width: 130, height: 130}}
+          source={{
+          uri: 'https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/book-bookmark-icon.png',
+        }}
+
+        />
+
+
       </View>
 
       <View style={styles.buttonsContainer}>
@@ -42,8 +38,9 @@ function Home({ navigation }) {
             style={styles.textButton}>
            Dê-me uma frase
           </Text>
-          <AntDesign name="rightcircleo" size={24} color="white"
+          <Entypo name="arrow-bold-right" size={24} color="white"
             onPress={() => navigation.navigate("Dê-me uma Frase")}/>
+
         </View>
 
         <View style={styles.button}>
@@ -51,7 +48,7 @@ function Home({ navigation }) {
             style={styles.textButton}>
            Inserir Frase
           </Text>
-          <AntDesign name="rightcircleo" size={24} color="white"
+          <AntDesign name="plussquare" size={24} color="white"
             onPress={() => navigation.navigate("Inserir Frase")}/>
         </View>
 
@@ -60,7 +57,7 @@ function Home({ navigation }) {
             style={styles.textButton}>
            Vêr Todas
           </Text>
-          <AntDesign name="rightcircleo" size={24} color="white"
+          <AntDesign name="book" size={24} color="white"
             onPress={() => navigation.navigate("Todas")}/>
         </View>
 
@@ -70,30 +67,18 @@ function Home({ navigation }) {
             style={styles.textButton}>
            Reiniciar
           </Text>
-          <AntDesign name="rightcircleo" size={24} color="white"
+          <AntDesign name="reload1" size={24} color="white"
             onPress={init}/>
         </View>
-        {/*
-        <View
-          style={[styles.button, {backgroundColor: '#aa3344'}]}>
-          <Text onPress={clear}
-            style={styles.textButton}>
-           Deletar Todas
-          </Text>
-          <AntDesign name="rightcircleo" size={24} color="white"
-            onPress={clear}/>
-        </View>
-        */}
+
         <View
           style={[styles.button]}>
-          <Text onPress={clear}
+          <Text
             style={styles.textButton}>
            Sobre
           </Text>
-          <AntDesign name="rightcircleo" size={24} color="white"/>
+          <AntDesign name="infocirlceo" size={24} color="white"/>
         </View>
-
-
 
       </View>
 

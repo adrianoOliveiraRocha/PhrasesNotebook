@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Button, TextInput, ToastAndroid } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 
 function InsertPhrase({ navigation }) {
   const [phrase, setPhrase] = React.useState('');
@@ -35,15 +36,25 @@ function InsertPhrase({ navigation }) {
           onChangeText={change}/>
       </View>
       <View style={[styles.buttonsContainer, {height: 100}]}>
-        <Button title='Salvar Frase'
-          color='#089757'
-          onPress={savePhrase}
-        />
-        <Button
-          title="Home"
-          color='#089757'
-          onPress={() => navigation.navigate("Home")}
-        />
+
+        <View style={styles.button}>
+          <Text onPress={savePhrase}
+            style={styles.textButton}>
+           Salvar Frase
+          </Text>
+          <Entypo name="arrow-bold-right" size={24} color="white"
+          onPress={savePhrase}/>
+        </View>
+
+        <View style={styles.button}>
+          <Text onPress={() => navigation.navigate("Home")}
+            style={styles.textButton}>
+           Home
+          </Text>
+          <AntDesign name="home" size={24} color="white"
+            onPress={() => navigation.navigate("Home")}/>
+        </View>
+        
       </View>
     </View>
   );

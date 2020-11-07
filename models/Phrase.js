@@ -1,4 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
+import { ToastAndroid } from 'react-native';
+import * as Speech from 'expo-speech';
 
 const Phrase = {
 
@@ -92,6 +94,20 @@ const Phrase = {
     await AsyncStorage.removeItem('phrases');
     await AsyncStorage.setItem('phrases', newPhrases);
     return true;
+  },
+
+  speak(phrase) {
+    var options = {
+      language: 'en-US',
+      pitch: 1.0,
+      rate: 1.0,
+      onError: (error) => alert('Oops! Tivemos um erro: ' + error),
+    };
+
+    Speech.speak(
+      phrase,
+      options,
+    );
   }
 
 }
