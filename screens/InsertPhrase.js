@@ -27,8 +27,10 @@ function InsertPhrase({ navigation }) {
 
   return (
     <View style={styles.formContainer}>
-      <View style={styles.formField}>
-        <Text style={styles.formLabel}>Inserir Frase</Text>
+      <View style={{flex: 0.3}}>
+        <Text style={styles.formLabel}>INSERIR FRASE</Text>
+      </View>
+      <View style={[styles.formField]}>
         <TextInput
           placeholder='Digite sua frase aqui...'
           style={styles.formItemInput}

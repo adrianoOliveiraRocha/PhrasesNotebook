@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#669'
+    backgroundColor: '#66c'
   },
 
   buttonsContainer: {
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   button: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderWidth: 2, borderColor: 'white',
+    borderWidth: 3, borderColor: 'white',
     padding: 5, backgroundColor: '#16a085'
   },
 
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#669'
+    backgroundColor: '#66c'
   },
 
   subContainer: {
@@ -57,9 +57,10 @@ const styles = StyleSheet.create({
 
   formLabel: {
     color: 'white',
-    margin: 25,
-    fontSize: 20,
-    textAlign: 'center'
+    fontSize: 30,
+    textAlign: 'center',
+    // padding: 5,
+    // backgroundColor: 'blue'
   },
 
   formItemInput: {
