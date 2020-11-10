@@ -35,9 +35,8 @@ const styles = StyleSheet.create({
   },
 
   subContainer: {
-    margin: 10,
-    // backgroundColor: '#222',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 80,
   },
 
   text: {

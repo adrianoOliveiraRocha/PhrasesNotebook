@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button, ToastAndroid, Image } from 'react-nativ
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 import { AntDesign, Entypo } from '@expo/vector-icons';
+import * as Linking from 'expo-linking'
 
 function Home({ navigation }) {
 
@@ -16,18 +17,20 @@ function Home({ navigation }) {
       })
   }
 
+  function linkSite() {
+    var url = 'https://sites.google.com/view/phrases-book/home';
+    Linking.openURL(url);
+  }
+
   return (
     <View style={styles.container}>
 
       <View style={styles.subContainer}>
-        <Image
-          style={{width: 130, height: 130}}
-          source={{
-          uri: 'https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/book-bookmark-icon.png',
-        }}
-
-        />
-
+      <Image style={{width: 200, height: 100}}
+        source={require('./../assets/logo-ep.png')} />
+        <Text style={{fontSize: 13, color: '#fff'}}>
+        Apenda inglês com frases
+        </Text>
 
       </View>
 
@@ -77,7 +80,8 @@ function Home({ navigation }) {
             style={styles.textButton}>
            Sobre
           </Text>
-          <AntDesign name="infocirlceo" size={24} color="white"/>
+          <AntDesign name="infocirlceo" size={24} color="white"
+            onPress={linkSite}/>
         </View>
 
       </View>

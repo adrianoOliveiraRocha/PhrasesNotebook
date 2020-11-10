@@ -32,8 +32,8 @@ function GetPhrase({ navigation }) {
 
     if(choosedPhrase) setPhrase(choosedPhrase);
     else {
-      setPhrase("Você já usou todas as frases registradas. Pressione Home para "
-      +"voltar à tela inicial e pressione o botão reiniciar");
+      setPhrase("Você não tem nehuma frase na fila. "
+      +"Na tela inicial, você pode reiniciar ou inserir mais frases");
       setPhraseExists(false);
     }
     makeAsUsed();

@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "EnglishPhrasesExpoJSON",
-    "slug": "EnglishPhrasesExpoJSON",
+    "name": "Phrases Notebook",
+    "slug": "phrases-notebook",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/my-icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/my-adaptive-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,13 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "br.net.w3software",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/my-adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "br.net.w3software",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
