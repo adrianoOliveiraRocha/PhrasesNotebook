@@ -28,7 +28,7 @@
       },
       "permissions" : [],
       "package": "br.net.w3software",
-      "versionCode": 2
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"

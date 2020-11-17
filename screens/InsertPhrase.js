@@ -12,17 +12,22 @@ function InsertPhrase({ navigation }) {
   }
 
   function savePhrase() {
-    Phrase.insert(phrase)
-      .then(result => {
-        if(result) {
-          ToastAndroid.show('Sua frase foi inserida com sucesso!', ToastAndroid.SHORT);
-          setPhrase('');
-        }
-      })
-      .catch(error => {
-        console.error(error);
-        alert(error)
-      });
+    if(phrase.length > 0) {
+      Phrase.insert(phrase)
+        .then(result => {
+          if(result) {
+            ToastAndroid.show('Sua frase foi inserida com sucesso!', ToastAndroid.SHORT);
+            setPhrase('');
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          alert(error)
+        });
+    } else {
+      alert('Você não digitou nenhuma frase!');
+    }
+
   }
 
   return (
