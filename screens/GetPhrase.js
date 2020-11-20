@@ -87,7 +87,7 @@ function GetPhrase({ navigation }) {
     return (
       <View style={styles.formContainer}>
         <View style={styles.item}>
-          <Text style={styles.title}>{phrase}</Text>
+          <Text style={styles.title} onPress={initializing}>{phrase}</Text>
           <AntDesign name="play" size={24} color="white" onPress={initializing} />
         </View>
 

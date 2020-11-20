@@ -2,13 +2,13 @@
   "expo": {
     "name": "Phrases Notebook",
     "slug": "phrases-notebook",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/my-icon.png",
     "splash": {
       "image": "./assets/my-adaptive-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#eeeeee"
+      "backgroundColor": "#6666cc"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,11 +24,11 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/my-adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#66c"
       },
       "permissions" : [],
       "package": "br.net.w3software",
-      "versionCode": 3
+      "versionCode": 4
     },
     "web": {
       "favicon": "./assets/favicon.png"

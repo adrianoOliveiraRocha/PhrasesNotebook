@@ -79,7 +79,6 @@ const Phrase = {
         phrases[i].used = true;
       }
     }
-    console.log(phrases);
     var stringData = JSON.stringify(phrases);
     await AsyncStorage.setItem('phrases', stringData);
     return true;
