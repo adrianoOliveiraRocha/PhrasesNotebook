@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, Button, ToastAndroid, Image } from 'react-nativ
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 import { AntDesign, Entypo } from '@expo/vector-icons';
-import * as Linking from 'expo-linking'
+import * as Linking from 'expo-linking';
+import { PublisherBanner} from 'expo-ads-admob';
+
+// test id ca-app-pub-3940256099942544/6300978111
+// real id pub-7854818002814670
 
 function Home({ navigation }) {
 
@@ -20,6 +24,10 @@ function Home({ navigation }) {
   function linkSite() {
     var url = 'https://sites.google.com/view/phrases-book/home';
     Linking.openURL(url);
+  }
+
+  function bannerError(error) {
+    console.error(error);
   }
 
   return (
@@ -85,6 +93,13 @@ function Home({ navigation }) {
         </View>
 
       </View>
+
+      <PublisherBanner
+        bannerSize="fullBanner"
+        adUnitID="ca-app-pub-3940256099942544/6300978111"
+        onDidFailToReceiveAdWithError={bannerError}
+      />
+
 
     </View>
   );
