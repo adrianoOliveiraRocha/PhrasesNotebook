@@ -26,19 +26,19 @@ function Home({ navigation }) {
     Linking.openURL(url);
   }
 
-  function bannerError(error) {
-    console.error(error);
+  function bannerError() {
+    console.error("Banner Error");
   }
 
   return (
     <View style={styles.container}>
 
       <View style={styles.subContainer}>
-      <Image style={{width: 200, height: 100}}
-        source={require('./../assets/logo-ep.png')} />
-        <Text style={{fontSize: 13, color: '#fff'}}>
-        Apenda inglês com frases
-        </Text>
+        <Image style={{width: 200, height: 100}}
+          source={require('./../assets/logo-ep.png')} />
+          <Text style={{fontSize: 13, color: '#fff'}}>
+          Apenda inglês com frases
+          </Text>
 
       </View>
 
@@ -94,12 +94,15 @@ function Home({ navigation }) {
 
       </View>
 
-      <PublisherBanner
-        bannerSize="fullBanner"
-        adUnitID="ca-app-pub-3940256099942544/6300978111"
-        onDidFailToReceiveAdWithError={bannerError}
-      />
+      <View style={styles.bannerContainer}>
 
+        <PublisherBanner
+          bannerSize="fullBanner"
+          adUnitID="pub-7854818002814670"
+          onDidFailToReceiveAdWithError={bannerError}
+        />
+
+      </View>
 
     </View>
   );

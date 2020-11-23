@@ -3,8 +3,6 @@ import { View, Text, Button, ToastAndroid } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 import { AntDesign, Entypo } from '@expo/vector-icons';
-import { PublisherBanner} from 'expo-ads-admob';
-
 
 function GetPhrase({ navigation }) {
   const [phrase, setPhrase] = React.useState(null);
@@ -84,10 +82,6 @@ function GetPhrase({ navigation }) {
       })
   }
 
-  function bannerError(error) {
-    console.error(error);
-  }
-
   if(id && phraseExists) {
     return (
       <View style={styles.formContainer}>
@@ -128,12 +122,6 @@ function GetPhrase({ navigation }) {
 
         </View>
 
-        <PublisherBanner
-          bannerSize="fullBanner"
-          adUnitID="ca-app-pub-3940256099942544/6300978111"
-          onDidFailToReceiveAdWithError={bannerError}
-        />
-
       </View>
     );
   } else {
@@ -152,12 +140,6 @@ function GetPhrase({ navigation }) {
               onPress={() => navigation.navigate("Home")}/>
           </View>
         </View>
-
-        <PublisherBanner
-          bannerSize="fullBanner"
-          adUnitID="ca-app-pub-3940256099942544/6300978111"
-          onDidFailToReceiveAdWithError={bannerError}
-        />
 
       </View>
     );

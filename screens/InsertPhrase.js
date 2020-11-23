@@ -3,7 +3,6 @@ import { View, Text, Button, TextInput, ToastAndroid } from 'react-native';
 import styles from './styles/main';
 import Phrase from './../models/Phrase';
 import { AntDesign, Entypo } from '@expo/vector-icons';
-import { PublisherBanner} from 'expo-ads-admob';
 
 function InsertPhrase({ navigation }) {
   const [phrase, setPhrase] = React.useState('');
@@ -28,10 +27,6 @@ function InsertPhrase({ navigation }) {
     } else {
       alert('Você não digitou nenhuma frase!');
     }
-  }
-
-  function bannerError(error) {
-    console.error(error);
   }
 
   return (
@@ -66,14 +61,6 @@ function InsertPhrase({ navigation }) {
             onPress={() => navigation.navigate("Home")}/>
         </View>
 
-      </View>
-
-      <View style={{paddingTop: 50}}>
-      <PublisherBanner
-        bannerSize="fullBanner"
-        adUnitID="ca-app-pub-3940256099942544/6300978111"
-        onDidFailToReceiveAdWithError={bannerError}
-      />
       </View>
 
     </View>

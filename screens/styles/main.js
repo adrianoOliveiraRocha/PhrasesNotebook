@@ -9,10 +9,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#66c'
   },
 
+  subContainer: {
+    flex: 0.4,
+    alignItems: 'center',
+    marginTop: 80,
+  },
+
   buttonsContainer: {
+    flex: 0.4,
     flexDirection: 'column',
     width: 185, height: 250, alignItems: 'stretch',
     justifyContent: 'space-around',
+  },
+
+  bannerContainer: {
+    flex: 0.2,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end'
   },
 
   button: {
@@ -32,11 +45,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#66c'
-  },
-
-  subContainer: {
-    alignItems: 'center',
-    marginTop: 80,
   },
 
   text: {
