@@ -56,7 +56,7 @@ function GetPhrase({ navigation }) {
       .then(result => {
         if(result) {
           setPhrase('');
-          alert("Frases deletada com sucesso!");
+          alert("Frase deletada com sucesso!");
         }
       })
       .catch(e => {
@@ -158,7 +158,7 @@ function GetPhrase({ navigation }) {
           adUnitID="ca-app-pub-3940256099942544/6300978111"
           onDidFailToReceiveAdWithError={bannerError}
         />
-        
+
       </View>
     );
   }

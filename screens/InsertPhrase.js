@@ -28,7 +28,6 @@ function InsertPhrase({ navigation }) {
     } else {
       alert('Você não digitou nenhuma frase!');
     }
-
   }
 
   function bannerError(error) {
