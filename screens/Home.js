@@ -4,10 +4,9 @@ import styles from './styles/main';
 import Phrase from './../models/Phrase';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import * as Linking from 'expo-linking';
-import { PublisherBanner} from 'expo-ads-admob';
+// import { AdMobBanner, setTestDeviceIDAsync } from 'expo-ads-admob';
 
-// test id ca-app-pub-3940256099942544/6300978111
-// real id pub-7854818002814670
+// ca-app-pub-7854818002814670/8223939951
 
 function Home({ navigation }) {
 
@@ -24,10 +23,6 @@ function Home({ navigation }) {
   function linkSite() {
     var url = 'https://sites.google.com/view/phrases-book/home';
     Linking.openURL(url);
-  }
-
-  function bannerError() {
-    console.error("Banner Error");
   }
 
   return (
@@ -93,17 +88,19 @@ function Home({ navigation }) {
         </View>
 
       </View>
-
+      {/*
       <View style={styles.bannerContainer}>
 
-        <PublisherBanner
+        <AdMobBanner
           bannerSize="fullBanner"
-          adUnitID="pub-7854818002814670"
-          onDidFailToReceiveAdWithError={bannerError}
+          adUnitID="ca-app-pub-7854818002814670/8223939951"
+          servePersonalizedAds={false}
+          servePersonalizedAds={true}
+          onDidFailToReceiveAdWithError={(error) => console.log(error)}
         />
 
       </View>
-
+      */}
     </View>
   );
 }

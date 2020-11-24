@@ -16,17 +16,19 @@ const styles = StyleSheet.create({
   },
 
   buttonsContainer: {
-    flex: 0.4,
+    flex: 0.6,
     flexDirection: 'column',
     width: 185, height: 250, alignItems: 'stretch',
     justifyContent: 'space-around',
+    // padding: 10,
+    margin: 10
   },
 
-  bannerContainer: {
-    flex: 0.2,
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end'
-  },
+  // bannerContainer: {
+  //   flex: 0.2,
+  //   alignItems: 'flex-end',
+  //   justifyContent: 'flex-end'
+  // },
 
   button: {
     flexDirection: 'row',
