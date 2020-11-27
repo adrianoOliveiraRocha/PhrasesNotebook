@@ -10,25 +10,24 @@ const styles = StyleSheet.create({
   },
 
   subContainer: {
-    flex: 0.4,
-    alignItems: 'center',
-    marginTop: 80,
+    flex: 0.3,
+    paddingTop: 50
+    // marginTop: 30,
   },
 
   buttonsContainer: {
-    flex: 0.6,
+    flex: 0.5,
     flexDirection: 'column',
     width: 185, height: 250, alignItems: 'stretch',
     justifyContent: 'space-around',
-    // padding: 10,
-    margin: 10
   },
 
-  // bannerContainer: {
-  //   flex: 0.2,
-  //   alignItems: 'flex-end',
-  //   justifyContent: 'flex-end'
-  // },
+  bannerContainer: {
+    flex: 0.2,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    alignContent: 'center'
+  },
 
   button: {
     flexDirection: 'row',
@@ -46,7 +45,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#66c'
+    backgroundColor: '#66c',
+    // padding: 100
   },
 
   text: {
@@ -68,8 +68,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     textAlign: 'center',
-    // padding: 5,
-    // backgroundColor: 'blue'
   },
 
   formItemInput: {

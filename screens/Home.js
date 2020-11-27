@@ -4,9 +4,7 @@ import styles from './styles/main';
 import Phrase from './../models/Phrase';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import * as Linking from 'expo-linking';
-// import { AdMobBanner, setTestDeviceIDAsync } from 'expo-ads-admob';
-
-// ca-app-pub-7854818002814670/8223939951
+import { AdMobBanner, setTestDeviceIDAsync } from 'expo-ads-admob';
 
 function Home({ navigation }) {
 
@@ -88,7 +86,7 @@ function Home({ navigation }) {
         </View>
 
       </View>
-      {/*
+      
       <View style={styles.bannerContainer}>
 
         <AdMobBanner
@@ -100,7 +98,7 @@ function Home({ navigation }) {
         />
 
       </View>
-      */}
+      
     </View>
   );
 }

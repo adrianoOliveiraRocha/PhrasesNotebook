@@ -32,7 +32,7 @@ function InsertPhrase({ navigation }) {
   return (
     <View style={styles.formContainer}>
       <View style={{flex: 0.3}}>
-        <Text style={styles.formLabel}>INSERIR FRASE</Text>
+        <Text style={styles.formLabel}>Inderir Frase</Text>
       </View>
       <View style={[styles.formField]}>
         <TextInput
@@ -41,7 +41,7 @@ function InsertPhrase({ navigation }) {
           value={phrase}
           onChangeText={change}/>
       </View>
-      <View style={[styles.buttonsContainer, {height: 100}]}>
+      <View style={[styles.buttonsContainer, {}]}>
 
         <View style={styles.button}>
           <Text onPress={savePhrase}
